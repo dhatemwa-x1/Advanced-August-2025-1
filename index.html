@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Class C1 Proficiency Syllabus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f5f9; /* slate-100 */
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0d9488, #2563eb); /* teal-600 to blue-600 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Accordion content animation */
+        .details-content, .day-details-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(-1rem);
+            transition-property: max-height, opacity, transform;
+            transition-duration: 0.6s;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .details-content.open, .day-details-content.open {
+            max-height: 2000px; /* Generous max-height for content */
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Hide default summary marker */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        /* Card hover effect */
+        .week-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .week-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Sticky Header -->
+    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50 border-b border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <img src="https://placehold.co/140x40/E0F2F1/0D9488?text=Apex+Intl." alt="Apex International University Banner" class="rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/140x40/E0F2F1/0D9488?text=Institution';">
+                    <img src="https://placehold.co/140x40/DBEAFE/2563EB?text=Step+Edu." alt="Step Educational Centre Banner" class="rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/140x40/DBEAFE/2563EB?text=Institution';">
+                </div>
+                <div class="text-center sm:text-right">
+                    <h1 class="text-2xl md:text-3xl font-bold gradient-text">Advanced C1 Proficiency Syllabus</h1>
+                    <p class="text-sm text-slate-500 mt-1">A 7-Week Journey to Mastery</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="max-w-4xl mx-auto space-y-6" id="syllabus-container">
+            <!-- Weeks will be dynamically injected here by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="bg-white mt-12 py-6 border-t border-slate-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-slate-500 text-sm">
+            <p>&copy; 2025 Apex International University & Step Educational Centre. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const syllabusData = [
+            {
+                week: 1,
+                title: "Perception & Reality",
+                goal: "🧠 Become a storyteller who can look at a mysterious picture, guess what might be happening, and create a compelling narrative with a group.",
+                image: "https://placehold.co/1200x400/67e8f9/0e7490?text=Week+1",
+                days: [
+                    { day: 1, title: "Building Your Vocabulary Toolbox", focus: "To brainstorm and gather the words you need to talk about mystery, interpretation, and illusion.", action: "You'll look at surreal images, discuss what you see, and contribute to a live 'word cloud' with related vocabulary. You will then sort these words into categories with your group.", grammar: "Today's focus is on lexis (vocabulary). You gain this vocabulary not just by seeing it, but by actively using it in discussion and then organizing it. This task builds your mental 'toolbox' of words related to perception, which you will need to build your story later in the week." },
+                    { day: 2, title: "Learning the Language of Guessing", focus: "To learn the specific grammatical phrases used for speculation by analyzing a clear example.", action: "Your teacher will 'think aloud' while describing a photo, providing a live model of how to speculate. In pairs, you'll analyze the specific phrases your teacher used. You will also get the instructions for your main group task.", grammar: "Today you learn this week's key grammar: Modal Verbs of Deduction (e.g., might be, must have been) and Speculative Phrases (e.g., It looks as if..., I'd hazard a guess that...). You gain this skill by seeing the language used in a perfect context and then immediately deconstructing it." },
+                    { day: 3, title: "Creating Your Narrative", focus: "To work collaboratively with your group to write the backstory for your photograph.", action: "This is your main work session. In your group, you'll discuss your assigned photo, agree on a story, and write a single, cohesive narrative about the characters, setting, and events.", grammar: "The task of creating a story from a single image forces you to use the speculative language from Day 2. To explore different ideas, you must use phrases like, 'She could be running away from someone,' or 'He must have just received some important news.' You gain mastery through this practical, creative application." },
+                    { day: 4, title: "Presenting Your Story", focus: "To plan and deliver a clear and engaging oral presentation of your group's story.", action: "Your group will have 30 minutes to plan a 5-minute presentation. Then, each group will present their story to the class and answer clarifying questions.", grammar: "This task tests your ability to use speculative language for an audience. To make your story engaging, you must use the language effectively to build mystery and interest. You gain confidence by moving from the written task of Day 3 to the oral performance of today." },
+                    { day: 5, title: "Mastering the Grammar", focus: "To review, categorize, and practice the language of speculation to ensure you can use it confidently and accurately.", action: "Your teacher will analyze effective language used in the presentations. You'll categorize phrases by their level of certainty (e.g., 95% sure vs. 50% sure). Finally, you'll complete targeted practice exercises on Canvas.", grammar: "This lesson solidifies your learning by focusing on the systematic analysis of modal verbs of deduction and other speculative phrases. By organizing the phrases logically and then using them in controlled exercises, you gain precision and a deeper understanding of the nuances between them." }
+                ]
+            },
+            {
+                week: 2,
+                title: "Innovation & Ethics",
+                goal: "🎤 Become a confident debater who can build a strong argument, defend your position, and challenge others' ideas respectfully and persuasively.",
+                image: "https://placehold.co/1200x400/a5b4fc/312e81?text=Week+2",
+                days: [
+                    { day: 1, title: "Understanding the Battlefield", focus: "To understand the arguments on both sides of a complex topic before you choose your position.", action: "After discussing a poll question, you'll read one of two opposing articles on a topic like AI art. You'll then summarize your article's arguments and key vocabulary in a new group with students who read the other text.", grammar: "The focus is on building topic-specific vocabulary and the skill of summarizing arguments. You gain this skill by reading a complex text and then being immediately required to explain it to someone else. This is the foundation of information gathering you'll need for the debate." },
+                    { day: 2, title: "Learning the Debater's Secret Language", focus: "To identify the specific language and strategies that effective speakers use to win a debate.", action: "You will watch and analyze a short, formal debate video. Your teacher will help you notice specific techniques, and you will work in groups to categorize phrases from the video based on their function.", grammar: "Today you learn the key tools for debate: Hedging Language (It seems that...) and Functional Phrases for agreeing and disagreeing. You gain this skill not by just hearing the phrases, but by actively identifying and sorting them. This process turns the language from something you just hear into a toolkit you can consciously use." },
+                    { day: 3, title: "Preparing for Battle", focus: "To work with your team to build your arguments and plan your debate strategy.", action: "You'll be assigned to a team and will have the entire lesson to prepare. You must brainstorm arguments, prepare counter-arguments (rebuttals), and assign speaking roles to each team member.", grammar: "The task of planning rebuttals directly forces you to think about how you will phrase your disagreements. You gain skill by strategically planning where and when to use the hedging and functional language you learned on Day 2 to make your arguments sound both strong and reasonable." },
+                    { day: 4, title: "The Great Debate", focus: "To put all your preparation into action by competing in a formal, timed debate.", action: "It's showtime! Your team will present its arguments according to a formal structure of opening statements, rebuttals, and closing statements, all under strict time limits.", grammar: "This is where you practice using your argumentative language spontaneously. You gain true mastery not just from planning, but from performing under pressure. Responding to the other team's points in real-time is the ultimate test of how well you have absorbed the language from Day 2." },
+                    { day: 5, title: "Honing Your Persuasive Voice", focus: "To refine your argumentation skills by focusing on advanced phrases and the power of pronunciation.", action: "You will review key debating phrases. The main focus will be on pronunciation, where you'll practice how sentence stress and intonation can make your speech more powerful and convincing.", grammar: "Today you learn that pronunciation is a grammatical tool for conveying meaning. You gain this advanced skill by drilling specific examples and hearing how emphasizing one word (e.g., 'The real issue...') can completely change the force of an argument." }
+                ]
+            },
+            // ... The rest of the weeks data would go here ...
+            {
+                week: 7,
+                title: "Capstone: The Symposium",
+                goal: "🏆 Synthesize all the skills you've learned in a final project that involves research, formal academic writing, and an oral defense.",
+                image: "https://placehold.co/1200x400/fcd34d/b45309?text=Week+7",
+                days: [
+                    { day: 1, title: "Laying the Foundation", focus: "To understand the final project requirements and to define a clear, debatable main argument.", action: "You'll be introduced to the final 'C1 Symposium' project. Your teacher will give a mini-lesson on academic conventions, and then you'll work with a partner to choose a topic and write a draft thesis statement.", grammar: "The most important grammatical and structural element of your entire project is the thesis statement. You gain this skill today by learning what makes a thesis debatable and clear. The task of writing and submitting one for feedback is the first and most critical step, as this single sentence will control the structure of your entire essay." },
+                    { day: 2, title: "Research and Collaborative Outlining", focus: "To find credible sources and create a logical outline for your argumentative essay.", action: "You and your partner will conduct research, taking notes, and then create a detailed outline for your essay that includes your thesis, topic sentences for each paragraph, and the evidence you'll use.", grammar: "Today you are consciously applying the skills from Week 3 (discourse markers and cohesion). As you create your outline, you are planning the logical flow of your argument. You'll decide how your paragraphs will connect, which prepares you to choose the right cohesive devices when you start writing." },
+                    { day: 3, title: "Collaborative Writing Workshop", focus: "To co-author the first draft of your essay, integrating all the language skills you have learned.", action: "You and your partner will work together in a shared document to write the draft of your essay.", grammar: "This is the moment of synthesis. The task of co-writing forces you to actively use and discuss language. You will need to use: Cohesive Devices (from Week 3) to link your paragraphs, Formal Register (from Week 5) to maintain an academic tone, and Argumentative and Hedging Language (from Week 2) to present your points persuasively." },
+                    { day: 4, title: "Rehearsal and Final Revisions", focus: "To practice your oral presentation and complete the final edits on your essay.", action: "You will team up with another pair to rehearse your 5-minute presentation and give each other feedback. Then, you'll use the rest of the time to make final revisions to your essay before submitting it.", grammar: "The rehearsal allows you to practice the signposting and presentation language from Week 6. The peer feedback is crucial for catching errors. The final revision task is your last chance to check your application of all grammar points from the course—is your thesis clear? Is your cohesion logical? Is your register consistent?" },
+                    { day: 5, title: "The C1 Symposium", focus: "To present a summary of your academic argument and defend it against critical questions.", action: "This is the final event. Each pair will deliver their 5-minute presentation and then immediately face a 5-minute Q&A session where they must defend their thesis against questions from the class and the instructor.", grammar: "The symposium is the ultimate test and demonstration of your skills. You will actively use: Presentation Language, Argumentation and Debate Language, and Q&A Management Phrases to handle questions professionally. You gain confidence and mastery by successfully deploying this full range of C1-level linguistic skills in a challenging, live, academic situation." }
+                ]
+            }
+        ];
+
+        const container = document.getElementById('syllabus-container');
+
+        syllabusData.forEach(weekData => {
+            const weekElement = document.createElement('div');
+            weekElement.className = 'week-card bg-white rounded-xl shadow-md overflow-hidden border border-slate-200';
+            
+            let daysHtml = '';
+            weekData.days.forEach(dayData => {
+                daysHtml += `
+                    <details class="group border-t border-slate-200 last:border-b-0">
+                        <summary class="list-none flex items-center justify-between p-5 cursor-pointer hover:bg-slate-50 transition-colors duration-200">
+                            <div class="flex items-center">
+                                <span class="text-base font-semibold gradient-text mr-4">Day ${dayData.day}</span>
+                                <span class="font-medium text-slate-800">${dayData.title}</span>
+                            </div>
+                            <svg class="w-5 h-5 text-slate-400 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <div class="day-details-content px-5 pb-6 bg-white">
+                            <div class="border-t border-slate-200 pt-5 space-y-5">
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 mt-1 w-5 h-5 text-teal-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg></div>
+                                    <div>
+                                        <h4 class="font-semibold text-teal-700">Today's Focus:</h4>
+                                        <p class="mt-1 text-slate-600 leading-relaxed">${dayData.focus}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 mt-1 w-5 h-5 text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                                    <div>
+                                        <h4 class="font-semibold text-blue-700">What You'll Do:</h4>
+                                        <p class="mt-1 text-slate-600 leading-relaxed">${dayData.action}</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <div class="flex-shrink-0 mt-1 w-5 h-5 text-indigo-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6-2.292m0 4.584v-2.292" /></svg></div>
+                                    <div>
+                                        <h4 class="font-semibold text-indigo-700">Grammar in Action:</h4>
+                                        <p class="mt-1 text-slate-600 leading-relaxed">${dayData.grammar}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                `;
+            });
+
+            weekElement.innerHTML = `
+                <details class="group">
+                    <summary class="list-none cursor-pointer">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-slate-800">Week ${weekData.week}: ${weekData.title}</h2>
+                                    <p class="text-slate-500 mt-2 max-w-2xl">${weekData.goal}</p>
+                                </div>
+                                <div class="flex-shrink-0 ml-4">
+                                    <svg class="w-6 h-6 text-slate-400 transform transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </summary>
+                    <div class="details-content">
+                        <div class="px-6 pb-6">
+                           <img src="${weekData.image}" alt="${weekData.title} Banner" class="w-full h-48 object-cover rounded-lg mb-4" onerror="this.onerror=null;this.src='https://placehold.co/1200x400/CCCCCC/FFFFFF?text=Weekly+Theme';">
+                           ${daysHtml}
+                        </div>
+                    </div>
+                </details>
+            `;
+            container.appendChild(weekElement);
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('details').forEach((details) => {
+            details.addEventListener('toggle', function(event) {
+                const content = this.querySelector('.details-content, .day-details-content');
+                if (this.open) {
+                    content.classList.add('open');
+                } else {
+                    content.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
